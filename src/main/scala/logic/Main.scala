@@ -7,10 +7,10 @@ import akka.event.Logging
   */
 object Main {
 
-  val system = ActorSystem("app")
-  val processor = system.actorOf(Props[CommandProcessor], name = "processor")
-  val comm = system.actorOf(Props[Comm], name = "comm")
-  val display = system.actorOf(Props[Display], name = "display")
+  val s = ActorSystem("app")
+  val processor = s.actorOf(Props[CommandProcessor], name = "processor")
+  val comm = s.actorOf(Props[Comm], name = "comm")
+  val display = s.actorOf(Props[Display], name = "display")
 
   def main(args: Array[String]): Unit = {
     println("ok")
@@ -20,6 +20,7 @@ object Main {
     readInput()
 
     println("end execution")
+
 
   }
 
